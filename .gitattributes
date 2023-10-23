@@ -1,0 +1,5 @@
+*.sql linguist-detectable=true
+
+# * Linguist's detection of languages in the SQL family is currently quite inconsistent.
+# * therefore I will fall back to SQL.
+*.sql linguist-language=sql
