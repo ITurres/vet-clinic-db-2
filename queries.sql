@@ -59,3 +59,107 @@ WHERE
     weight_kg BETWEEN 10.4 AND 17.3;
 
 -- ** Project 1 END.
+-- ** Project 2 START.
+-- *** Transactions START.
+BEGIN;
+
+UPDATE animals
+SET
+    species = 'unspecified';
+
+ROLLBACK;
+
+BEGIN;
+
+UPDATE animals
+SET
+    species = 'digimon'
+WHERE
+    name LIKE '%mon';
+
+UPDATE animals
+SET
+    species = 'pokemon'
+WHERE
+    species IS NULL;
+
+COMMIT;
+
+BEGIN;
+
+DELETE FROM animals;
+
+ROLLBACK;
+
+BEGIN;
+
+DELETE FROM animals
+WHERE
+    date_of_birth > '2022-01-01';
+
+SAVEPOINT update_animals_weight;
+
+UPDATE animals
+SET
+    weight_kg = weight_kg * -1;
+
+ROLLBACK TO update_animals_weight;
+
+UPDATE animals
+SET
+    weight_kg = weight_kg * -1
+WHERE
+    weight_kg < 0;
+
+COMMIT;
+
+-- *** Transactions END.
+-- *** Queries START.
+SELECT
+    COUNT(*) AS total_animals
+FROM
+    animals;
+
+SELECT
+    COUNT(*) AS never_escaped
+FROM
+    animals
+WHERE
+    escape_attempts = 0;
+
+SELECT
+    AVG(weight_kg) AS avg_weight_kg
+FROM
+    animals;
+
+SELECT
+    name
+FROM
+    animals
+ORDER BY
+    escape_attempts DESC
+LIMIT
+    1;
+
+SELECT
+    species,
+    MIN(weight_kg) AS min_weight_kg,
+    MAX(weight_kg) AS max_weight_kg
+FROM
+    animals
+GROUP BY
+    species;
+
+SELECT DISTINCT
+    species,
+    AVG(escape_attempts) AS avg_escape_attempts
+FROM
+    animals
+GROUP BY
+    species,
+    date_of_birth
+HAVING
+    date_of_birth BETWEEN '1990-01-01' AND '2000-12-31';
+
+-- *** Queries END.
+-- ** Project 2 END.
