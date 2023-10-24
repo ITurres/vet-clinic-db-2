@@ -61,7 +61,37 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **postgreSQL**
+:bulb: **Database Initialization**:
+
+- Initialize the database to create a robust foundation.
+
+:bulb: **`Animals` Table Setup**:
+
+- Set up the `Animals` table to organize and store crucial data.
+
+:bulb: **Data Population**:
+
+- Populate the table with relevant information to fuel the db.
+
+:bulb: **Complex Data Queries**:
+
+- Execute advanced data queries to extract precise insights.
+
+:bulb: **Data Modification with Transaction Control**:
+
+- Implement transaction control for secure data updates, including rollback and commit operations.
+
+:bulb: **Data Removal with Transaction Safeguards**:
+
+- Apply transaction safeguards for confident data removal, with rollback and commit operations.
+
+:bulb: **Data Updates with Savepoint Management**:
+
+- Manage data updates efficiently using savepoints within the transactions.
+
+:bulb: **Table Querying with Aggregate Results**:
+
+- Retrieve aggregated responses from the table, providing meaningful insights.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
