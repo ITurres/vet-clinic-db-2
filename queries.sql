@@ -67,7 +67,17 @@ UPDATE animals
 SET
     species = 'unspecified';
 
+SELECT
+    species
+FROM
+    animals;
+
 ROLLBACK;
+
+SELECT
+    species
+FROM
+    animals;
 
 BEGIN;
 
@@ -83,13 +93,33 @@ SET
 WHERE
     species IS NULL;
 
+SELECT
+    species
+FROM
+    animals;
+
 COMMIT;
+
+SELECT
+    species
+FROM
+    animals;
 
 BEGIN;
 
 DELETE FROM animals;
 
+SELECT
+    species
+FROM
+    animals;
+
 ROLLBACK;
+
+SELECT
+    species
+FROM
+    animals;
 
 BEGIN;
 
