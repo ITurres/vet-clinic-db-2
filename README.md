@@ -173,7 +173,7 @@ To run the project, execute the following command:
 ## 🔭 Future Features <a name="future-features"></a>
 
 - [x] query and update animals table.
-- [ ] query multiple tables.
+- [x] query multiple tables.
 - [ ] add "join table" for visits.
 - [ ] database performance audit.
 - [ ] add database schema diagram.
