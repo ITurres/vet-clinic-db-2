@@ -11,3 +11,27 @@ CREATE TABLE
 
 ALTER TABLE animals
 ADD COLUMN species VARCHAR(20) NULL;
+
+CREATE TABLE
+    owners (
+        id SMALLINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+        full_name VARCHAR(50) NOT NULL,
+        age SMALLINT NOT NULL
+    );
+
+CREATE TABLE
+    species (
+        id SMALLINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+        name VARCHAR(20) NOT NULL
+    );
+
+ALTER TABLE animals
+DROP column species;
+
+ALTER TABLE animals
+ADD COLUMN species_id SMALLINT,
+ADD CONSTRAINT fk_species FOREIGN KEY (species_id) REFERENCES species (id) ON DELETE CASCADE;
+
+ALTER TABLE animals
+ADD COLUMN owner_id SMALLINT,
+ADD CONSTRAINT fk_owner FOREIGN KEY (owner_id) REFERENCES owners (id) ON DELETE CASCADE;
