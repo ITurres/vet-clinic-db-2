@@ -174,7 +174,7 @@ To run the project, execute the following command:
 
 - [x] query and update animals table.
 - [x] query multiple tables.
-- [ ] add "join table" for visits.
+- [x] add "join table" for visits.
 - [ ] database performance audit.
 - [ ] add database schema diagram.
 
