@@ -75,7 +75,7 @@ VALUES
     ('Jack Harkness', 38, '2008-06-08');
 
 INSERT INTO
-    specializations (vets_id, species_id)
+    specializations (vet_id, species_id)
 VALUES
     (1, 1),
     (3, 1),
