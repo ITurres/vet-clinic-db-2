@@ -36,6 +36,10 @@
 
 - This project is intended to get familiar with relational databases, SQL, PostgreSQL, psql, and pgAdmin.
 
+### ERD:
+
+![vet-clinic-erd](src/media/vet-clinic-2-erd.png)
+
 ---
 
 #### Learning objectives
